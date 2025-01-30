@@ -143,8 +143,12 @@
 
         function calculateResult(array) {
             const expression = array.join('')
-            const result = eval(expression)
-            return result
+            try {
+                const result = eval(expression)
+                return result
+            } catch (error) {
+                return display.value = 'Invalid Expression'
+            }
         }
     </script>
 </body>
